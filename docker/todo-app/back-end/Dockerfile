@@ -1,9 +1,6 @@
 FROM node:14-alpine
 WORKDIR /app
+EXPOSE 3001
 ADD node_modules.tar.gz ./
-COPY package*.json ./
-RUN npm install
-COPY ./src ./
-
-
-
+COPY . ./
+CMD ["npm", "start"]
